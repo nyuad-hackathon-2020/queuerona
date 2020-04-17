@@ -1,20 +1,31 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { AppLoading } from 'expo';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { Provider } from 'react-redux';
 import { Home } from './src/screens';
+import FetchFonts from './src/utils/Fonts';
+// import store from './src/utils/Redux';
+
+const Stack = createStackNavigator();
 
 export default function App() {
-	return (
-		<View style={styles.container}>
-			<Home />
-		</View>
+	const [fontsLoaded] = FetchFonts();
+
+	return fontsLoaded ? (
+		// <Provider store={store}>
+		<NavigationContainer>
+			<Stack.Navigator
+				initialRouteName="Home"
+				screenOptions={{
+					headerShown: false
+				}}>
+				<Stack.Screen name="Home" component={Home} />
+				<Stack.Screen name="SingleStore" component={Home} />
+			</Stack.Navigator>
+		</NavigationContainer>
+	) : (
+		// </Provider>
+		<AppLoading />
 	);
 }
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: '#fff',
-		alignItems: 'center',
-		justifyContent: 'center'
-	}
-});

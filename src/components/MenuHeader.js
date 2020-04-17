@@ -1,12 +1,17 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Ionicons, FontAwesome } from '@expo/vector-icons';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default function MenuHeader(props) {
 	return (
 		<View style={styles.container}>
-			<Ionicons name="md-menu" size={32} color="white" style={styles.leftSection} />
-			<FontAwesome name="user-circle" size={32} color="white" style={styles.rightSection} />
+			<TouchableOpacity style={styles.leftSection}>
+				<Ionicons name="md-menu" size={32} color="white" style={styles.leftSection} />
+			</TouchableOpacity>
+			<TouchableOpacity style={styles.rightSection}>
+				<FontAwesome name="user-circle" size={32} color="white" />
+			</TouchableOpacity>
 		</View>
 	);
 }
@@ -25,9 +30,11 @@ const styles = StyleSheet.create({
 		zIndex: 25
 	},
 	leftSection: {
-		marginLeft: '10%'
+		marginLeft: '5%',
+		overflow: 'hidden',
+		textAlign: 'center'
 	},
 	rightSection: {
-		marginRight: '10%'
+		marginRight: '5%'
 	}
 });

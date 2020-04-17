@@ -1,12 +1,14 @@
 import React from 'react';
 import { StyleSheet, View, Dimensions } from 'react-native';
-import { MenuHeader as Header, MapView } from '../components';
+import { MenuHeader as Header, MapView, Slider, PanicButton } from '../components';
 
-export default function Home() {
+export default function Home({ navigation }) {
 	return (
 		<View style={styles.container}>
 			<Header />
 			<MapView />
+			<Slider navigation={navigation} />
+			<PanicButton />
 		</View>
 	);
 }
@@ -17,12 +19,6 @@ const height = Dimensions.get('window').height;
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: '#000000',
-		alignItems: 'center',
-		justifyContent: 'center'
-	},
-	mapStyle: {
-		width: width,
-		height: height
+		backgroundColor: '#000000'
 	}
 });

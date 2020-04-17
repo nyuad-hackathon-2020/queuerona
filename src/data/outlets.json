@@ -1,0 +1,23 @@
+[
+	{
+		"id": 1,
+		"name": "Carrefour Market",
+		"location": "Mall Of The Emirates",
+		"logo": "https://seeklogo.net/wp-content/uploads/2012/12/carrefour-logo-vector.png",
+		"background": "https://mybayutcdn.bayut.com/mybayut/wp-content/uploads/Carrefour-MOE.jpg"
+	},
+	{
+		"id": 2,
+		"name": "Life Pharmacy",
+		"location": "Marina Mall, Abu Dhabi",
+		"logo": "https://www.alseef.ae/-/media/project/meraasecosystem/alseef/shops/life-pharmacy/logo.png?h=480&w=480&hash=C83BF28D054B3F125559CE00FC0C4820",
+		"background": "https://www.thebeach.ae/-/media/project/meraasecosystem/beach/shops/life-pharmacy/main.jpg"
+	},
+	{
+		"id": 3,
+		"name": "Splash Fashions",
+		"location": "Dubai Mall",
+		"logo": "https://seeklogo.com/images/S/splash-logo-B7B5EEAC55-seeklogo.com.png",
+		"background": "https://cdn.yougotagift.com/media/cache/94/a6/94a64ca1909cbdc063df1d3562efd74d.jpg"
+	}
+]
