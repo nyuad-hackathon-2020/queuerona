@@ -4,20 +4,21 @@ import Carousel from 'react-native-snap-carousel';
 import data from '../data/outlets.json';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-export default function Slider() {
+export default function Slider({ navigation }) {
 	const _RenderItems = ({ item, index }) => {
 		return (
-			<TouchableOpacity style={styles.slide}>
+			<TouchableOpacity
+				style={styles.slide}
+				onPress={() =>
+					navigation.navigate('SingleStore', {
+						id: item.id,
+						item: item
+					})
+				}>
 				<ImageBackground
 					source={{ uri: item.logo }}
 					resizeMode="contain"
-					style={styles.slide}
-					onPress={() =>
-						navigation.navigate('SingleStore', {
-							id: item.id,
-							item: item
-						})
-					}></ImageBackground>
+					style={styles.slide}></ImageBackground>
 			</TouchableOpacity>
 		);
 	};

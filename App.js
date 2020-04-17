@@ -3,7 +3,7 @@ import { AppLoading } from 'expo';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Provider } from 'react-redux';
-import { Home } from './src/screens';
+import { Home, SingleStore } from './src/screens';
 import FetchFonts from './src/utils/Fonts';
 // import store from './src/utils/Redux';
 
@@ -21,7 +21,7 @@ export default function App() {
 					headerShown: false
 				}}>
 				<Stack.Screen name="Home" component={Home} />
-				<Stack.Screen name="SingleStore" component={Home} />
+				<Stack.Screen name="SingleStore" component={SingleStore} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	) : (

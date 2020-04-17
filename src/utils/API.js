@@ -1,0 +1,21 @@
+import axios from 'axios';
+
+const API_BASE_URL = 'https://queuerona.herokuapp.com/';
+
+export const FETCH_AVAILABLE_CAPACITY = async bID => {
+	const { data } = await axios.get(`${API_BASE_URL}/api/capacity/${bID}`);
+
+	return data;
+};
+
+export const FETCH_AVAILABLE_TICKETS = async bID => {
+	const { data } = await axios.get(`${API_BASE_URL}/api/available_tickets/${bID}`);
+
+	return data;
+};
+
+export const RESERVE_AVAILABLE_TICKET = async bID => {
+	const { data } = await axios.post(`${API_BASE_URL}/api/reserve_ticket/${bID}`);
+
+	return data;
+};

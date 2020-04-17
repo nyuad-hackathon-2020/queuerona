@@ -3,6 +3,7 @@ import MapView, { Marker } from 'react-native-maps';
 import { StyleSheet, Dimensions } from 'react-native';
 import { EvilIcons } from '@expo/vector-icons';
 import MapStyle from '../styles/GoogleMaps.json';
+import Colors from '../styles/constants';
 
 export default function Maps() {
 	const _InitialRegion = () => {
@@ -21,7 +22,7 @@ export default function Maps() {
 			customMapStyle={MapStyle}
 			showsCompass={false}>
 			<Marker coordinate={{ latitude: 25.2048, longitude: 55.2708 }}>
-				<EvilIcons name="location" size={124} color="yellow" />
+				<EvilIcons name="location" size={124} color={Colors.YELLOW} />
 			</Marker>
 		</MapView>
 	);
@@ -33,7 +34,7 @@ const height = Dimensions.get('window').height;
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: '#000000',
+		backgroundColor: Colors.BLACK,
 		alignItems: 'center',
 		justifyContent: 'center'
 	},
