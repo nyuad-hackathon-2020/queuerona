@@ -76,7 +76,7 @@ def business(id):
     at = available_ticket[str(id)]
     customers = [c-at[0], c-at[1], c-at[2]]
     return render_template("/dashboard/index.html",
-        customers=customers, name=name, logo=logo, id=str(id), location=location[id])
+        customers=customers, name=name, logo=logo, id=str(id), location=location[id-1])
 
 if __name__ == '__main__':
     app.debug = True
