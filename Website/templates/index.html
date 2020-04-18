@@ -1,0 +1,30 @@
+<h1>QueueRona API</h1>
+
+<h3>/api/capacity/business_name></h3>
+<ul>
+    <li>GET: {"cpacity": number}</li>
+    <li>POST: {"capacity": number}</li>
+</ul>
+
+<h3>/api/available_tickets/business_name</h3>
+<ul>
+    <li>
+        GET: { <br>
+            "10-12": number, <br>
+            "12-2": number, <br>
+            "2-4": number <br>
+            }
+    </li>
+</ul>
+
+<h3>/api/reserve_ticket/business_name</h3>
+<ul>
+    <li>
+        POST: {"reserve_ticket": number}
+        <br>
+        number <br>
+               = 1 -> "10-12" <br>
+               = 2 -> "12-2" <br>
+               = 3 -> "2-4" <br>
+    </li>
+</ul>
