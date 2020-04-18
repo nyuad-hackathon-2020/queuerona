@@ -17,6 +17,11 @@
 		"assetBundlePatterns": ["**/*"],
 		"ios": {
 			"supportsTablet": true
+		},
+		"android": {
+			"package": "com.nyuadhackathon.queuecorna",
+			"versionCode": 1,
+			"config": {}
 		}
 	}
 }

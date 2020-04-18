@@ -1,14 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import {
-	StyleSheet,
-	View,
-	Dimensions,
-	ImageBackground,
-	Text,
-	TouchableOpacity
-} from 'react-native';
-import { Entypo } from '@expo/vector-icons';
-import { MenuHeader as Header } from '../components';
+import { StyleSheet, View, Dimensions, Text, TouchableOpacity } from 'react-native';
+import { MenuHeader as Header, StoreHeader } from '../components';
 import { FETCH_AVAILABLE_TICKETS } from '../utils/API';
 import Colors from '../styles/constants';
 
@@ -25,7 +17,13 @@ export default function SingleStore({ route, navigation }) {
 		FETCH_TICKET_API();
 	}, [id]);
 
-	const _ReverseTicket = () => {};
+	const _NextStage = slot => {
+		navigation.navigate('Symptoms', {
+			bizID: id,
+			slot: slot,
+			item: item
+		});
+	};
 
 	const _AvailableTicketColor = number => {
 		if (number < 6) {
@@ -40,21 +38,9 @@ export default function SingleStore({ route, navigation }) {
 	return (
 		<View style={styles.container}>
 			<Header />
-			<ImageBackground
-				source={{ uri: item.background }}
-				resizeMode="cover"
-				style={styles.backgroundImage}>
-				<View style={styles.backgroundImage}></View>
-			</ImageBackground>
-			<Text style={styles.outletName}>{item.name}</Text>
-			<View style={styles.outletInfoSection}>
-				<Entypo name="location-pin" size={24} color={Colors.WHITE} />
-				<Text style={styles.outletLocation}>{item.location}</Text>
-				<Entypo name="location-pin" size={24} color={Colors.WHITE} />
-				<Text style={styles.outletLocation}>{item.time}</Text>
-			</View>
+			<StoreHeader item={item} />
 			<View style={styles.ticketArea}>
-				<TouchableOpacity style={styles.SingleTicket} onPress={() => _ReverseTicket(0)}>
+				<TouchableOpacity style={styles.SingleTicket} onPress={() => _NextStage(1)}>
 					<Text style={styles.TicketSlotNumber}>SLOT 1:</Text>
 					<Text style={styles.TicketSlotNumber}>10am - 12pm</Text>
 
@@ -66,7 +52,7 @@ export default function SingleStore({ route, navigation }) {
 						<Text style={styles.AvailableCountText}>{tickets['10-12'] ? tickets['10-12'] : 0}</Text>
 					</View>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.SingleTicket} onPress={() => _ReverseTicket(1)}>
+				<TouchableOpacity style={styles.SingleTicket} onPress={() => _NextStage(2)}>
 					<Text style={styles.TicketSlotNumber}>SLOT 2:</Text>
 					<Text style={styles.TicketSlotNumber}>12pm - 2pm</Text>
 
@@ -78,7 +64,7 @@ export default function SingleStore({ route, navigation }) {
 						<Text style={styles.AvailableCountText}>{tickets['12-2'] ? tickets['12-2'] : 0}</Text>
 					</View>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.SingleTicket} onPress={() => _ReverseTicket(2)}>
+				<TouchableOpacity style={styles.SingleTicket} onPress={() => _NextStage(3)}>
 					<Text style={styles.TicketSlotNumber}>SLOT 3:</Text>
 					<Text style={styles.TicketSlotNumber}>2pm - 4pm</Text>
 

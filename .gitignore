@@ -15,3 +15,4 @@ web-report/
 
 # Environment
 .env
+app.json

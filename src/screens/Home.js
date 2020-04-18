@@ -9,13 +9,10 @@ export default function Home({ navigation }) {
 			<Header />
 			<MapView />
 			<Slider navigation={navigation} />
-			<PanicButton />
+			<PanicButton navigation={navigation} />
 		</View>
 	);
 }
-
-const width = Dimensions.get('window').width;
-const height = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
 	container: {
