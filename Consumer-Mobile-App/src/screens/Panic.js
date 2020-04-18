@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
 	View,
 	Text,
@@ -12,6 +12,15 @@ import { FontAwesome5, MaterialCommunityIcons } from '@expo/vector-icons';
 import Carousel from 'react-native-snap-carousel';
 import data from '../data/outlets.json';
 import Colors from '../styles/constants';
+
+import { ALERT_POSSIBLE_SUBMIT } from '../utils/API';
+
+export default function Panic({ navigation }) {
+	useEffect(() => {
+		data.forEach(async item => {
+			await ALERT_POSSIBLE_SUBMIT(1);
+		});
+	}, []);
 
 export default function Panic({ navigation }) {
 	const _RenderItems = ({ item, index }) => {
