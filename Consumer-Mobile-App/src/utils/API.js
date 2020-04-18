@@ -29,3 +29,19 @@ export const RESERVE_AVAILABLE_TICKET = async (bID, slotID) => {
 
 	return data;
 };
+
+export const ALERT_POSSIBLE_SUBMIT = async bID => {
+	const { data } = await axios.post(
+		`${API_BASE_URL}/api/warning/${bID}`,
+		{
+			warning: 1
+		},
+		{
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		}
+	);
+
+	return data;
+};
