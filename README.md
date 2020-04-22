@@ -1,6 +1,6 @@
 # queuerona
 
-This project is part of our participation on NYUAD Hackathon.
+This project is part of our participation in NYUAD Hackathon.
 
 see our presentation:
 
